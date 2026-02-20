@@ -1,22 +1,25 @@
  ## Project 1: Algorithm 1: Connecting Pairs of Persons
 
- # Elizabeth Philip
- # Email: eliza_philip@csu.fullerton.edu
- # Project 1: Algorithm 1
+ # Name: Monorandoll Im, Elizabeth Philip
+ # Email: monorandoll@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
+ # Project 1: Algorithm 1 - Connecting Pairs of Persons
  # Language: Python
 
 # Description
-This program calculates the minimum number of swaps required so that couples sit side by side.
-Input: row - a list of integers representing people in seats
-Output: Minimum number of swaps required to seat all couples together
+A row of 2n seats with n couples is given where each couple is numbered consecutively like (0,1), (2,3), and so on. 
+The seating order is stored in an array, and the goal is to find the minimum number of swaps needed so that each couple sits next to each other. A swap can be made between any two people. 
+The algorithm checks the seats in pairs and swaps people when a couple is not sitting together, keeping track of positions to do this efficiently in linear time.
 
 # Files Included:
     - Algorithm2.py
-    - PROJECTREMOESFS
     - READMEA1
+    - Project Report
 
 # How to Run:
-
+- open terminal and enter into the file
+- write: Algorithm2.py
+- write: 0 2 1 3 (include spaces)
+- the output should show. "Minimum swaps required: 1"
 
 # PSEUDOCODE
 
@@ -83,4 +86,5 @@ End Main
 - dictionary position of people: O(n)
 - existing row: O(n)
 - temp variables: O(1)
+
 - TOTAL is O(n)
