@@ -3,36 +3,6 @@
 #Name: Elizabeth Philip
 #Email: eliza_philip@csu.fullerton.edu
 
-
-def brute_force_preferred_city(distances, fuel, mpg):
-    """
-    Brute Force Solution
-    Time Complexity: O(n^2)
-    """
-    n = len(distances)
-
-    for start in range(n):
-        tank = 0
-        valid = True
-
-        for step in range(n):
-            city = (start + step) % n
-
-            tank += fuel[city]
-            required_fuel = distances[city] / mpg
-
-            if tank < required_fuel:
-                valid = False
-                break
-
-            tank -= required_fuel
-
-        if valid:
-            return start
-
-    return -1
-
-
 def greedy_preferred_city(distances, fuel, mpg):
     """
     Greedy Solution
@@ -71,4 +41,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
