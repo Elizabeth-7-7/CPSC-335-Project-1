@@ -1,0 +1,39 @@
+## Project 1: Algorithm 2: Preferred Starting City
+
+ # Elizabeth Philip
+ # Email: eliza_philip@csu.fullerton.edu
+ # Project 1: Algorithm 1
+ # Language: Python
+
+ # Description
+
+# Files Included:
+- greedy_gas_station.py
+- project_report.pdf
+- README.txt
+
+
+# How to Run:
+
+1. Open terminal
+2. Navigate to project directory
+3. 
+
+ 
+
+Sample Input is already included in main().
+
+To modify input:
+Edit the arrays inside main() function.
+
+Output:
+The program prints:
+- Brute force result
+- Greedy result
+
+# PSEUDOCODE
+
+
+# TIME COMPLEXITY 
+
+# SPACE COMPLEXITY

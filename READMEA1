@@ -1,0 +1,86 @@
+ ## Project 1: Algorithm 1: Connecting Pairs of Persons
+
+ # Elizabeth Philip
+ # Email: eliza_philip@csu.fullerton.edu
+ # Project 1: Algorithm 1
+ # Language: Python
+
+# Description
+This program calculates the minimum number of swaps required so that couples sit side by side.
+Input: row - a list of integers representing people in seats
+Output: Minimum number of swaps required to seat all couples together
+
+# Files Included:
+    - Algorithm2.py
+    - PROJECTREMOESFS
+    - READMEA1
+
+# How to Run:
+
+
+# PSEUDOCODE
+
+1. n <- length of row which is: the total number of people
+
+2. Create an empty dictionary pos so that it stores current seat index of each person
+
+3. For i from 0 to n-1 do person ← row[i] pos[person]<-i 
+time complexity: O(1)
+
+4.  swaps <- 0 // counter for number of swaps
+5.  i <- 0 // index of the first person in the current pair
+
+6.  While i < n do
+        first_person <- row[i]
+
+        // Determine partner of first_person
+        If first_person is: even then
+            partner <- first_person + 1
+        Else
+            partner <- first_person - 1
+
+        // Check if partner is: already sitting next to first_person
+        If row[i + 1] != partner then
+            partner_index <- pos[partner]
+
+            // Swap partner into the correct seat
+            temp <- row[i + 1]
+            row[i + 1] <- row[partner_index]
+            row[partner_index] <- temp
+
+            // Update positions in the dictionary
+            pos[temp] <- partner_index
+            pos[partner] <- i + 1
+
+            swaps <- swaps + 1
+
+        i <- i + 2  // move to next pair of seats
+
+7.  Return swaps
+
+Begin Main
+    Print "Enter the numbers separated by spaces:"
+
+    Read user_input as a string
+    Split user_input by spaces into list of strings -> values row <- empty list
+
+    For each value in values do
+        Convert value to integer
+        Append integer to row
+
+    result ← ConnectPairs(row)
+    Print "Minimum swaps required:", result
+End Main
+
+# TIME COMPLEXITY 
+- dictionary build is: O(n)
+- while loops: O(n/2 x 1) = O(n)
+- other code is: O(1)
+- TOTAL is O(n)
+- method used is the step count analysis
+
+# SPACE COMPLEXITY
+- dictionary position of people: O(n)
+- existing row: O(n)
+- temp variables: O(1)
+- TOTAL is O(n)
