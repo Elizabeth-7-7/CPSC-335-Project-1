@@ -45,7 +45,7 @@ def swappingCouples(row):
             
 
 def main(): 
-    user= input("Enter the seating with space in between:")
+    user= input("Enter the seating with space in between: ")
     row = list(map(int, user.split()))
 
     result = swappingCouples(row)
@@ -55,3 +55,4 @@ def main():
 if __name__ == "__main__":
     main()
     input("Press Enter to exit")
+
