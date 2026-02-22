@@ -1,66 +1,57 @@
-# Algorithm 1. Connecting Pairs of Persons
+# Algorithm 1: Greedy Approach to Couple sitting next to each other problem
+ # Name: Monorandoll Im, Elizabeth Philip
+ # Email: monorandoll@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
 
-def connect_pairs(row):#Input: row = [0, 2, 1, 3]
+def swap(row, a,b):
+    row[a], row[b] = row[b], row[a]
+
+def swappingCouples(row):
+
     n = len(row)
-    
-    pos = {}
-    for i in range(n):
-        person = row[i]
-        pos[person] = i
-        """"
-        person sitting at 'i'
-        time complexity: O(1)
-        (i = 0 to n-1) and space complexity: O(n)
-        each dictionary is  O(1)
-        """""
 
+    #storing the position in the index of the person
+    position = [0] * n 
+
+    #build the position array with the baseline swap amount performed
+    for i in range(len(row)):
+        position[row[i]] = i
     swaps = 0
-    i = 0#checker for the first person in the pair & time O(1)
 
-    
-    while i < n:
-        first_person = row[i]#O(1)
 
-        if first_person % 2 == 0:#if the first person is even, their partner is the next odd number vice versa
-            partner = first_person + 1
-        else:
-            partner = first_person - 1#O(1)
+    #function to process seating arrangement for two at a time
+    for i in range (0, n , 2):
+        
 
-        if row[i + 1] != partner:#if the partner is not sitting next to the first person then swap
-            partner_index = pos[partner]
+        partner = row[i]^1 
 
-            # Swap the person at i+1 with the partner
-            temp = row[i + 1]
-            row[i + 1] = row[partner_index]
-            row[partner_index] = temp
+        #checking to see if it's the right partner
+        if row[i+1] != partner:
 
-            """
-            positions in dictionary
-            update position of the person who was swapped to the partner's position
-            """
-            pos[temp] = partner_index
-            pos[partner] = i + 1
+            #finding where the correct partner is at
+            partner_pos = position[partner]
+            wrong_partner = row[i+1]
+
+            
+            swap (row, i+1, partner_pos)
+
+            #update position after swap
+            position[wrong_partner] = partner_pos
+            position[partner] = i+1
 
             swaps += 1
-        i += 2
-        """
-        number of swaps needed to connect the pair
-        move to the next pair
-        time complexity: O(n) since we are iterating through the row once
-        """
 
-    return swaps#and this one is to return the total number of swaps needed to connect all pairs
+    return swaps
 
+            
 
-# ---------------- MAIN PROGRAM ----------------
+def main(): 
+    user= input("Enter the seating with space in between:")
+    row = list(map(int, user.split()))
+
+    result = swappingCouples(row)
+    print("Minimum swaps needed: ", result)
+    print("New Seating: ", row)
 
 if __name__ == "__main__":
-    print("Enter the numbers separated by spaces:")
-    row = []
-    user_input = input()
-    values = user_input.split()#splits the string which is based on spaces to get a list of strings
-    for value in values:#integer
-        row.append(int(value))#adds the integer value to the row list
-
-    result = connect_pairs(row)
-    print("Minimum swaps required:", result)
+    main()
+    input("Press Enter to exit")
