@@ -6,9 +6,8 @@
  # Language: Python
 
 # Description
-A row of 2n seats with n couples is given where each couple is numbered consecutively like (0,1), (2,3), and so on. 
-The seating order is stored in an array, and the goal is to find the minimum number of swaps needed so that each couple sits next to each other. A swap can be made between any two people. 
-The algorithm checks the seats in pairs and swaps people when a couple is not sitting together, keeping track of positions to do this efficiently in linear time.
+This program determines the minimum number of swaps needed so that all couples sit together. It uses a greedy strategy by processing seats in pairs and immediately swapping in the correct partner when necessary. 
+A position array is maintained to allow constant-time lookup of any person’s location. The algorithm runs in O(n) time and uses O(n) space.
 
 # Files Included:
     - Algorithm2.py
@@ -23,68 +22,52 @@ The algorithm checks the seats in pairs and swaps people when a couple is not si
 
 # PSEUDOCODE
 
-1. n <- length of row which is: the total number of people
+Algorithm SwappingCouples(row)
 
-2. Create an empty dictionary pos so that it stores current seat index of each person
+n <- length(row)
 
-3. For i from 0 to n-1 do person ← row[i] pos[person]<-i 
-time complexity: O(1)
+Create array position[0 … n-1]
 
-4.  swaps <- 0 // counter for number of swaps
-5.  i <- 0 // index of the first person in the current pair
+ # Store the index of each person
+ for i <- 0 to n - 1 do
+  position[row[i]] <- i
+ end for
 
-6.  While i < n do
-        first_person <- row[i]
+swaps <- 0
 
-        // Determine partner of first_person
-        If first_person is: even then
-            partner <- first_person + 1
-        Else
-            partner <- first_person - 1
+ # Process seats in pairs
+ for i <- 0 to n - 1 step 2 do
 
-        // Check if partner is: already sitting next to first_person
-        If row[i + 1] != partner then
-            partner_index <- pos[partner]
+   partner <- row[i] XOR 1
 
-            // Swap partner into the correct seat
-            temp <- row[i + 1]
-            row[i + 1] <- row[partner_index]
-            row[partner_index] <- temp
+if row[i + 1] =! partner then
 
-            // Update positions in the dictionary
-            pos[temp] <- partner_index
-            pos[partner] <- i + 1
+          partner_pos <- position[partner]
+          wrong_person <- row[i + 1]
 
-            swaps <- swaps + 1
+         # Swap them
+         row[i + 1] <-> row[partner_pos]
 
-        i <- i + 2  // move to next pair of seats
+         # Update positions
+           position[wrong_person] <- partner_pos
+           position[partner] <- i + 1
 
-7.  Return swaps
+         swaps <- swaps + 1
 
-Begin Main
-    Print "Enter the numbers separated by spaces:"
+      end if
 
-    Read user_input as a string
-    Split user_input by spaces into list of strings -> values row <- empty list
+  end for
 
-    For each value in values do
-        Convert value to integer
-        Append integer to row
-
-    result ← ConnectPairs(row)
-    Print "Minimum swaps required:", result
-End Main
+  return swaps
 
 # TIME COMPLEXITY 
-- dictionary build is: O(n)
-- while loops: O(n/2 x 1) = O(n)
-- other code is: O(1)
-- TOTAL is O(n)
-- method used is the step count analysis
+- Position array: O(n)
+- Pair processing loop: O(n)
+- Other operations: O(1)
+- TOTAL: O(n)
 
 # SPACE COMPLEXITY
-- dictionary position of people: O(n)
-- existing row: O(n)
-- temp variables: O(1)
+- Position array: O(n)
+- Temporary variables: O(1)
+- TOTAL: O(n)
 
-- TOTAL is O(n)
