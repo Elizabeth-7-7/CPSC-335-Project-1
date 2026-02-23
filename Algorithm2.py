@@ -1,4 +1,3 @@
-
 #Algorithm 2 Greedy Approach to Hamiltonian Problem
 #Name: Monorandoll Im, Sehaj Dhaliwal, and Elizabeth Philip
 #Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
@@ -35,4 +34,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
