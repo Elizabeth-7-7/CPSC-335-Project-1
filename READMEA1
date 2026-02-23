@@ -7,8 +7,7 @@
 
 # Description
 This program determines the minimum number of swaps needed so that all couples sit together. It uses a greedy strategy by processing seats in pairs and immediately swapping in the correct partner when necessary. 
-A position array is maintained to allow constant-time lookup of any person’s location. The algorithm runs in O(n) time and uses O(n) space.
-
+A position array is maintained to allow constant-time lookup of any person’s location. The algorithm runs in O(n) time.
 # Files Included:
     - Algorithm1.py
     - READMEA1
@@ -62,6 +61,7 @@ if row[i + 1] =! partner then
 
 # TIME COMPLEXITY 
 Is in Project Report PDF
+
 
 
 
