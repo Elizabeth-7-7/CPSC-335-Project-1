@@ -61,10 +61,8 @@ if row[i + 1] =! partner then
   return swaps
 
 # TIME COMPLEXITY 
-- Position array: O(n)
-- Pair processing loop: O(n)
-- Other operations: O(1)
-- TOTAL: O(n)
+Is in Project Report PDF
+
 
 
 
