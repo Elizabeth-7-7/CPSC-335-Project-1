@@ -1,7 +1,7 @@
 
-#Algorithm 2 Greedy Something
-#Name: Elizabeth Philip
-#Email: eliza_philip@csu.fullerton.edu
+#Algorithm 2 Greedy Approach to Hamiltonian Problem
+#Name: Monorandoll Im, Sehaj Dhaliwal, and Elizabeth Philip
+#Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
 
 def greedy_preferred_city(distances, fuel, mpg):
     """
@@ -43,3 +43,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
