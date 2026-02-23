@@ -66,8 +66,4 @@ if row[i + 1] =! partner then
 - Other operations: O(1)
 - TOTAL: O(n)
 
-# SPACE COMPLEXITY
-- Position array: O(n)
-- Temporary variables: O(1)
-- TOTAL: O(n)
 
