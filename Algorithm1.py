@@ -42,7 +42,7 @@ def swappingCouples(row):
 
     return swaps
 
-            
+# ---------------- MAIN PROGRAM ----------------
 
 def main(): 
     user= input("Enter the seating with space in between: ")
@@ -55,5 +55,6 @@ def main():
 if __name__ == "__main__":
     main()
     input("Press Enter to exit")
+
 
 
