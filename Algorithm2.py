@@ -4,10 +4,7 @@
 #Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
 
 def preferred_starting_city(distances, fuel, mpg):
-    """
-    Greedy Solution
-    Time Complexity: O(n)
-    """
+
     n = len(distances)
     start = 0
     tank = 0
@@ -38,3 +35,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
