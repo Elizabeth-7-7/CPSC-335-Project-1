@@ -1,6 +1,6 @@
-# Algorithm 1: Greedy Approach to Couple sitting next to each other problem
- # Name: Monorandoll Im, Elizabeth Philip
- # Email: monorandoll@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
+ # Algorithm 1: Greedy Approach to Couple sitting next to each other problem
+ # Name: Monorandoll Im, Sehaj Dhaliwal, and Elizabeth Philip
+ # Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
 
 def swap(row, a,b):
     row[a], row[b] = row[b], row[a]
@@ -55,4 +55,5 @@ def main():
 if __name__ == "__main__":
     main()
     input("Press Enter to exit")
+
 
