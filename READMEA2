@@ -16,25 +16,55 @@
 # How to Run:
 
 1. Open terminal
-2. Navigate to project directory
-3. 
-
- 
-
-Sample Input is already included in main().
-
-To modify input:
-Edit the arrays inside main() function.
+2. Open to project
+3. Using the sample output
+4. It should show: The Preferred starting city for the sample above is city: 4
+5. Sample Input is already included in main(). To modify output, edit the arrays inside main() function.
 
 Output:
 The program prints:
-- Brute force result
 - Greedy result
 
 # PSEUDOCODE
+
+Algorithm PreferredStartingCity(distances, fuel, mpg)
+
+ n <- length(distances)
+
+  start <- 0
+  tank <- 0
+
+ for i <- 0 to n − 1 do
+
+      gain <- fuel[i] −* mpg - distances[i]
+
+      tank <- tank += gain
+
+  if tank < 0 then
+       start <- i + 1
+       tank <- 0
+ end if
+
+ end for
+
+ return start
+
+End Algorithm
+
+Algorithm Main
+
+  city_distances <- [5, 25, 15, 10, 15]
+  fuel <- [1, 2, 1, 0, 3]
+  mpg <- 10
+
+  result <- PreferredStartingCity(city_distances, fuel, mpg)
+
+  Output "The preferred starting city is:", result
+
+End Main
 
 
 # TIME COMPLEXITY 
 
 
-# SPACE COMPLEXITY
+
