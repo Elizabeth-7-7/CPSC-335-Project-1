@@ -6,24 +6,25 @@
  # Language: Python
 
  # Description
+This algorithm uses a greedy approach to find the city from which a car can complete a circular trip without running out of fuel. 
+It goes through each city, calculating the net fuel gain or loss and keeping a running total in the tank. 
+Whenever the tank drops below zero, it resets the starting city to the next city, and at the end, it returns the city where starting is guaranteed to work.
 
 # Files Included:
-- greedy_gas_station.py
-- project_report.pdf
-- README.txt
+- Algorithm2.py
+- READMEA2
+- Project Report PDF
 
 
 # How to Run:
 
 1. Open terminal
 2. Open to project
-3. Using the sample output
-4. It should show: The Preferred starting city for the sample above is city: 4
-5. Sample Input is already included in main(). To modify output, edit the arrays inside main() function.
+3. Use the sample output
+4. Sample Input is already included in main(). To modify output, edit the arrays inside main() function.
 
 Output:
-The program prints:
-- Greedy result
+The program prints: The Preferred starting city for the sample above is city: 4
 
 # PSEUDOCODE
 
@@ -36,7 +37,7 @@ Algorithm PreferredStartingCity(distances, fuel, mpg)
 
  for i <- 0 to n − 1 do
 
-      gain <- fuel[i] −* mpg - distances[i]
+      gain <- fuel[i] * mpg - distances[i]
 
       tank <- tank += gain
 
@@ -65,6 +66,7 @@ End Main
 
 
 # TIME COMPLEXITY 
+
 
 
 
