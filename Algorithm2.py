@@ -3,7 +3,7 @@
 #Name: Monorandoll Im, Sehaj Dhaliwal, and Elizabeth Philip
 #Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
 
-def greedy_preferred_city(distances, fuel, mpg):
+def preferred_starting_city(distances, fuel, mpg):
     """
     Greedy Solution
     Time Complexity: O(n)
@@ -13,34 +13,28 @@ def greedy_preferred_city(distances, fuel, mpg):
     tank = 0
     total = 0
 
-    for i in range(n):
-        gain = fuel[i] - (distances[i] / mpg)
-        tank += gain
-        total += gain
+    for i in range(n):#O(n)
+        gain = fuel[i] * mpg - distances[i]# Calculate net gain/loss of gas at city i
+        tank += gain # Update current gas in tank
 
-        # If tank becomes negative,
-        # reset start position
+        # If tank becomes negative, reset start position
         if tank < 0:
-            start = i + 1
-            tank = 0
+            start = i + 1 #city i is distance[i] away from city i + 1
+            tank = 0# tank always starts out empty
 
     return start
 
+# ---------------- MAIN PROGRAM ----------------
 
 def main():
-    # Sample Input
+    # Sample input
     city_distances = [5, 25, 15, 10, 15]
     fuel = [1, 2, 1, 0, 3]
     mpg = 10
 
-    print("Brute Force Result:",
-          brute_force_preferred_city(city_distances, fuel, mpg))
-
-    print("Greedy Result:",
-          greedy_preferred_city(city_distances, fuel, mpg))
+    print("The Preferred starting city for the sample above is city: ",
+          preferred_starting_city(city_distances, fuel, mpg))
 
 
 if __name__ == "__main__":
-
     main()
-
