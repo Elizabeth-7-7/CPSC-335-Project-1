@@ -1,7 +1,7 @@
  ## Project 1: Algorithm 1: Connecting Pairs of Persons
 
- # Name: Monorandoll Im, Elizabeth Philip
- # Email: monorandoll@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
+ # Name: Monorandoll Im, Sehaj Dhaliwal, Elizabeth Philip
+ # Email: monorandoll@csu.fullerton.edu, dhaliwalsehaj36@csu.fullerton.edu, eliza_philip@csu.fullerton.edu
  # Project 1: Algorithm 1 - Connecting Pairs of Persons
  # Language: Python
 
@@ -10,9 +10,9 @@ This program determines the minimum number of swaps needed so that all couples s
 A position array is maintained to allow constant-time lookup of any person’s location. The algorithm runs in O(n) time and uses O(n) space.
 
 # Files Included:
-    - Algorithm2.py
+    - Algorithm1.py
     - READMEA1
-    - Project Report
+    - Project Report PDF
 
 # How to Run:
 - open terminal and enter into the file
@@ -65,5 +65,6 @@ if row[i + 1] =! partner then
 - Pair processing loop: O(n)
 - Other operations: O(1)
 - TOTAL: O(n)
+
 
 
